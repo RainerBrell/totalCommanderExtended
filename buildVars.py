@@ -34,11 +34,11 @@ General:
 """
 	),
 	# version
-	addon_version="2026.06.13",
+	addon_version="2026.06.21",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""# Version 2026.06.13:
-- First version.
+	addon_changelog=_("""# Version 2026.06.21:
+- First stable version.
 """
 	),
 	# Author(s)
