@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 # Rainer brell <nvda@brell.net>
-# total Commander extended 
 import re
 import appModuleHandler
 import controlTypes
 import braille
+import speech
 import winUser
 from NVDAObjects import NVDAObject
+from .skipTranslation import translate
 
 _LB_GETCURSEL = 0x0188  # index of the focused item (0-based)
 _LB_GETCOUNT  = 0x018B  # total number of list items
@@ -87,6 +88,15 @@ class LCLListBoxOverlay(NVDAObject):
 		except Exception:
 			pass
 		return {}
+
+	def event_stateChange(self):
+		# Speak exactly "Selected" or "Not selected", nothing else.
+		# Braille is updated so the prefix letter changes case accordingly.
+		# Default event_stateChange is suppressed entirely.
+		isSelected = controlTypes.State.SELECTED in self.states
+		speech.cancelSpeech()
+		speech.speakMessage(translate("selected") if isSelected else translate("not selected"))
+		braille.handler.handleUpdate(self)
 
 	def getBrailleRegions(self, review=False):
 		region = _LCLListBrailleRegion(self)

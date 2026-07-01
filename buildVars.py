@@ -34,10 +34,12 @@ General:
 """
 	),
 	# version
-	addon_version="2026.06.21",
+	addon_version="2026.07.01",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""# Version 2026.06.21:
+	addon_changelog=_("""# Version 2026.07.01:
+- Informs via voice after pressing the space bar whether the list entry is selected or not.
+# Version 2026.06.21:
 - First stable version.
 """
 	),

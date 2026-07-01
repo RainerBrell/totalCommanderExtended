@@ -1,0 +1,6 @@
+gh release create 2026.06.21 totalCommanderExtended-2026.06.21.nvda-addon --title "totalCommanderExtended 2026.06.21" --notes "Release vom 21.06.2026"
+gh release view 2026.06.21 --json assets --jq ".assets[].url"
+gh release view 2026.06.21 --json assets --jq ".assets[].url" | clip
+https://github.com/RainerBrell/totalCommanderExtended/
+https://github.com/RainerBrell/totalCommanderExtended/releases/download/2026.06.21/totalCommanderExtended-2026.06.21.nvda-addon
+
